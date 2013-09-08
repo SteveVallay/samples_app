@@ -6,6 +6,9 @@ gem 'rails', '4.0.0'
 #using bootstrap-sass
 gem 'bootstrap-sass','>=2.0.0'
 
+#using bcrypt-ruby 
+gem 'bcrypt-ruby'
+
 # Use sqlite3 as the database for Active Record
 group :development do
   gem 'sqlite3'
