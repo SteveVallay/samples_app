@@ -4,10 +4,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params.require(:user).permit(:name,:email,:password,:password_confirmation))
     if @user.save
-      puts 'success'
+      flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
     else
-      puts 'fail'
+      flash[:error] = "Fail to create new user !"
       render 'new'
     end
   end
