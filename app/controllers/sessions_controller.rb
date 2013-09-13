@@ -7,7 +7,7 @@ def create
   if user && user.authenticate(params[:session][:password])
     #comments
   else
-    flash[:error] = " invalid email/password combination"
+    flash.now[:error] = " invalid email/password combination"
     render 'new'
   end
 end
