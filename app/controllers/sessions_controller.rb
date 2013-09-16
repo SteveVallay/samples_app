@@ -7,7 +7,7 @@ def create
   if user && user.authenticate(params[:session][:password])
     #comments
     sign_in(user)
-    redirect_to user
+    redirect_back_or user
   else
     flash.now[:error] = " invalid email/password combination"
     render 'new'
