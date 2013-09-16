@@ -1,0 +1,25 @@
+<% provide(:tilte, "Edit user") %>
+<h1> Update your profile</h1>
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for :user , url: user_path, method: :patch do |f| %>
+	           <%= render "layouts/error_messages" %>
+
+		  <%= f.label :name %>
+	          <%= f.text_field :name %>
+
+	          <%= f.label :email %>
+	          <%= f.text_field :email %>
+
+		  <%= f.label :password %>
+		  <%= f.password_field :password %>
+
+		  <%= f.label :password_confirmation, "Confirmation" %>
+		  <%= f.password_field :password_confirmation %>
+                  </br>
+		  <%= f.submit "save account", class: "btn, btn-large btn-primary" %>
+		<% end %>
+		<% gravata_for @user %>
+		<a href="http://www.gravatar.com/emails">change</a>
+	</div>
+</div>
