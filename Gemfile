@@ -9,6 +9,10 @@ gem 'bootstrap-sass','>=2.0.0'
 #using bcrypt-ruby 
 gem 'bcrypt-ruby','~>3.0.0'
 
+
+#using paginate 
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 # Use sqlite3 as the database for Active Record
 group :development do
   gem 'sqlite3'
