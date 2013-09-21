@@ -1,17 +1,23 @@
 <%=provide(:title,@user.name) %>
 <div class ="row">
-<aside>
+<aside class="span4">
+<section>
 <h1>
     <%= @user.name %>
     <%= gravata_for @user %>
 </h1>
 <%= @user.email %>
+</section>
+<section>
+    <%= render 'shared/stats' %>
+</section>
 </aside>
 <div class="span8">
+    <%= render 'follow_form' if signed_in? %>
     <% if @user.microposts.any? %>
-        <h3>Microposts (<%= @user.microposts.count %>>)</h3>
+        <h3>Microposts (<%= @user.microposts.count %>)</h3>
         <ol class="microposts">
-            <% render @microposts %>
+            <%= render @microposts %>
         </ol>
         <%= will_paginate @microposts %>
     <% end %>
