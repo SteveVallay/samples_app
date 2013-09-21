@@ -43,6 +43,16 @@ class UsersController < ApplicationController
     flash[:success] = "User destoryed"
     redirect_to users_path
   end
+  def home
+    if signed_in?
+      @micropost = current_user.microposts.build
+      if @micropost
+        @feed_items = current_user.feed.padginate(page: params[:page], per_page: 3)
+      else
+        @feed_items = []
+      end
+    end
+  end
 
   private 
     def correct_user
